@@ -29,7 +29,7 @@
             y=y+dy;
             cizim.fill();
             if (x>en||x<0) 
-                dx =-1 * dx; //tersini yap tam tersine gonder aynı buyuklukte
+                dx =-1 * dx; //reverse changes
             
             if (y>boy||y<0) 
                 dy = -1*dy;
@@ -39,7 +39,7 @@
         }
         function temizle(){
         cizim.beginPath();
-        cizim.fillStyle="#ffffff"; //renk 
+        cizim.fillStyle="#ffffff"; //color
         cizim.closePath();
         cizim.fillRect(0,0,tuval.width,tuval.height); //x y witdh height
         cizim.closePath();
