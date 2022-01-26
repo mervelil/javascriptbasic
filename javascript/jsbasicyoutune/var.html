@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr><td>Sayi</td><td>Faktoriyel</td></tr>
+   <script>
+        var a,b;
+        a=10;
+        b=20;
+        var toplam= 0;
+        // c=a+b;
+        // document.write("merhaba js <br> Toplam :");
+        // document.write(c);
+        for ( index = 100; index >90; index--) {
+            document.write(index);
+            document.write("<hr>");
+            toplam += index;
+            
+        }
+        
+        document.write(toplam);
+        function topla(a,b) {
+           if (a>6) {
+            return a+b; 
+           }
+            else{
+                return a-b;
+            } 
+        }
+        document.write("<hr>");
+        document.write(topla(23,22));
+        function fact(a) {
+            var carp=1;
+            for ( j = 1; j<= a; j++) {
+                carp =carp * j;
+                return carp;
+                
+            }
+        }
+            for ( i = 1; i < 5; i++) {
+               document.write("<tr><td>"+i+"</td><td>"+fact(i)+"</td></tr>");
+                
+            }
+            
+        
+   </script> 
+   merhaba 
+   <button onclick='document.getElementById("mesaj").innerHTML="merhaba";'>TIKLa</button>
+   <p id="mesaj"></p>
+</body>
+</html>

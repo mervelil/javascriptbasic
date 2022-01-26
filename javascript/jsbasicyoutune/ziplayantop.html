@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="tuval" width="640" height="480" style="border: 1px  solid;">Bu browser canvs desteklemiyor</canvas>
+    <script>
+   
+        var boy =tuval.height;
+        var en=tuval.width;
+        var x =en /2;
+        var y=boy/2;
+        var dx =5;
+        var dy =5;
+         var tuval=document.getElementById("tuval");
+        var cizim=tuval.getContext("2d");
+
+        function ziplayantop(){
+        temizle();
+        cizim.beginPath();
+        cizim.arc(x,y,10,0,2*Math.PI);
+        cizim.closePath();   
+        cizim.fillStyle="#ff0000"; 
+            x=x+dx;
+            y=y+dy;
+            cizim.fill();
+            if (x>en||x<0) 
+                dx =-1 * dx; //tersini yap tam tersine gonder aynı buyuklukte
+            
+            if (y>boy||y<0) 
+                dy = -1*dy;
+            
+         
+          
+        }
+        function temizle(){
+        cizim.beginPath();
+        cizim.fillStyle="#ffffff"; //renk 
+        cizim.closePath();
+        cizim.fillRect(0,0,tuval.width,tuval.height); //x y witdh height
+        cizim.closePath();
+        cizim.fill()   ;
+        }
+        setInterval(ziplayantop(),15);
+ 
+    </script>
+        </body> 
+        </html>

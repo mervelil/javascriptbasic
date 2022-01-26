@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="tuval" width="640" height="480" style="border: 1px  solid;">Bu browser canvs desteklemiyor</canvas>
+    <script>
+       
+        function temizle(){
+        cizim.beginPath();
+        cizim.fillStyle="#ff0000"; //renk 
+        cizim.closePath();
+        cizim.fillRect(0,0,tuval.width,tuval.height); //x y witdh height
+        cizim.closePath();
+        cizim.stroke();   
+        }
+        var tuval=document.getElementById("tuval");
+        var cizim=tuval.getContext("2d");
+        tuval.addEventListener('click',function (e){
+        cizim.beginPath();
+        cizim.arc(e.x,e.y,50,0,2*Math.PI); // x y  yarı cap  hangi acı ne  tıkladıgımız noktada bu ozelliklere sahib noktalar cızıyor ecent sayesinde
+        cizim.closePath();
+        cizim.fillStyle="#ff0000"; //renk 
+        cizim.fill();
+        cizim.stroke();
+        });
+        tuval.addEventListener('mousemove',function (e){
+        cizim.beginPath();
+        cizim.arc(e.x,e.y,50,0,2*Math.PI); // x y  yarı cap  hangi acı ne  tıkladıgımız noktada bu ozelliklere sahib noktalar cızıyor ecent sayesinde
+        cizim.stroke();
+        });
+        cizim.beginPath();
+        cizim.moveTo(0,0);
+        cizim.lineTo(300,300);
+        cizim.lineTo(400,300);
+        cizim.moveTo(400,0);
+        cizim.lineTo(500,100);
+        cizim.arc(300,200,50,0,2*Math.PI); // x y  yarı cap  hangi acı ne kadarlık yani
+        cizim.font= "30px Arial";
+        cizim.fillText("bilgisayar kavramları",280,320); //metin x y kordinatları
+        cizim.fillRect(500,400,580,420); //x y witdh height
+        cizim.stroke();
+    </script>
+</body>
+</html>
